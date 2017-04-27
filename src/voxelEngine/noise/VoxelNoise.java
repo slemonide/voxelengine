@@ -9,5 +9,5 @@ public interface VoxelNoise {
     /*
      * This method returns the voxel type for a location
      */
-    public int noise(int xin, int yin, int zin);
+    int noise(int xin, int yin, int zin);
 }

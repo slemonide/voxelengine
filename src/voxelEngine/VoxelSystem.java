@@ -13,28 +13,28 @@ import com.jme3.scene.Node;
  */
 public interface VoxelSystem extends AppState, Savable {
     
-    public Node getNode();
-    public int getSystemHeight();
-    public void putBlock(Vector3f location, int type);
-    public void removeBlock(Vector3f location);
-    public int getHeight(int x, int z);
-    public void setPlayerLocation(Vector3f location);
-    public Integer getBlock(Vector3f location);
-    public Vector3f getPointedBlockLocation(Vector3f collisionContactPoint, boolean getNeighborLocation);
+    Node getNode();
+    int getSystemHeight();
+    void putBlock(Vector3f location, int type);
+    void removeBlock(Vector3f location);
+    int getHeight(int x, int z);
+    void setPlayerLocation(Vector3f location);
+    Integer getBlock(Vector3f location);
+    Vector3f getPointedBlockLocation(Vector3f collisionContactPoint, boolean getNeighborLocation);
     
     
-    public void notifyUpdate(Vector3f translation, int side, boolean refreshDisplay);
-    public void refreshDisplay(Vector3f translation, int side);
-    public void externalPropagation(Vector3f translation, int chunkSide, 
-            int x, int y, int z, int pValue, int voxelSide);
-    public void updatePropagation(Vector3f translation);
-    public int getLightVal(Vector3f translation, int side, int x, int y, int z);
-    public VoxelFace getVoxel(Vector3f translation, int side, int x, int y, int z);
+    void notifyUpdate(Vector3f translation, int side, boolean refreshDisplay);
+    void refreshDisplay(Vector3f translation, int side);
+    void externalPropagation(Vector3f translation, int chunkSide,
+                             int x, int y, int z, int pValue, int voxelSide);
+    void updatePropagation(Vector3f translation);
+    int getLightVal(Vector3f translation, int side, int x, int y, int z);
+    VoxelFace getVoxel(Vector3f translation, int side, int x, int y, int z);
 
-    public void addPhysicsSpace(RigidBodyControl rigidBodyControl);
-    public void removePhysicsSpace(RigidBodyControl rigidBodyControl);
-    public int getVoxelFaces(int voxelType, int side);
-    public Material getMaterial(int type, int light);
+    void addPhysicsSpace(RigidBodyControl rigidBodyControl);
+    void removePhysicsSpace(RigidBodyControl rigidBodyControl);
+    int getVoxelFaces(int voxelType, int side);
+    Material getMaterial(int type, int light);
 
-    public void destroy();
+    void destroy();
 }
